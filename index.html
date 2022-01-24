@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+  
+<head>
+    <title>Reads the XML data using JavaScript</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Details</title>
+  
+    <!-- CSS -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+  
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+  
+        tr:nth-child(even) {
+            background-color: #e27cc0
+        }
+  
+        th {
+            background-color: #7c0f65;
+            color: white;
+        }
+  
+        .button {
+            text-align: center;
+            padding: 30px;
+            border: 4px solid rgb(55, 12, 211);
+            background: rgba(33, 57, 136, 0.5);
+            color: rgb(0, 0, 0);
+            outline: none;
+            border-radius: 30px;
+            font-size: 20px;
+            width: 500px;
+  
+        }
+  
+        .button:hover {
+            color: black;
+            background: white;
+        }
+
+        .title{
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            background-color: blanchedalmond;
+            font-size: 27px;
+            border: brown ;
+
+        }
+        
+        .B1{
+            font-size: 20px;
+        }
+
+    </style>
+
+<section class="title">
+    <h1>Staff Portal</h1>
+</section>
+
+
+  
+    <!--JavaScript-->
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+  
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    empDetails(this);
+                }
+            };
+  
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "basic.xml", true);
+            xmlhttp.send();
+        }
+  
+        function empDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table =
+                `<tr><th>Name</th><th>Role</th>
+                    <th>qualification</th><th>school_name</th>
+                    <th>DOB</th><th>contact_number</th>
+                </tr>`;
+                
+            var x = xmlDoc.getElementsByTagName("user");
+            
+  
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("name")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("role")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("qualification")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("school_name")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("DOB")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("contact_number")[0]
+                    .childNodes[0].nodeValue + "</td></tr>";
+            }
+  
+            // Print the xml data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+
+    </script>
+
+    <script>
+//load xml file to add and remove
+function loadXMLDocD(xname)
+        {
+            if(window.XMLHttpRequest)
+            {
+                xhttp=new XMLHttpRequest();
+            }
+            else{
+                xhttp=new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            xhttp.open("GET",xname,false);
+            xhttp.send();
+           return  xhttp.responseXML;
+        }
+        function remove(node)
+        {
+           xmlDoc= loadXMLDocD('basic.xml');
+           y=xmlDoc.getElementsByTagName(node)[0];
+           xmlDoc.documentElement.removeChild(y);
+           alert('The 1st Element ' +node+ ' has been removed!');
+        }
+        function show(element)
+        {
+            x=xmlDoc.getElementsByTagName(element);
+            for(i=0;i<x.length;i++)
+            {
+                document.write(x[i].childNodes[0].nodeValue);
+                document.write("<br\>");
+            }
+        }
+
+    </script>
+</head>
+  
+<body>
+        <button type="button" class="button" 
+            onclick="loadXMLDoc()">
+            Display Staff Details
+        </button>
+
+        <br><br>
+
+        <button type="button" class="button"
+            onclick="remove('user')">
+            Remove
+        </button>
+
+         <br><br>
+        
+        <button type="button" class="button"
+            onclick="show('role')">
+            Show
+       </button>
+    </section>
+      
+    <br><br>
+    <table id="id"></table>
+
+</body>
+  
+</html>

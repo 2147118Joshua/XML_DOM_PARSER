@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<register>
+    <user>
+        <name>joshua</name>
+        <role>IT</role>
+        <qualification>MCA</qualification>
+        <school_name>Christ</school_name>
+        <DOB>1/01/1999</DOB>
+        <contact_number>1234543241</contact_number>
+    </user>
+    <user>
+        <name>Leo</name>
+        <role>Teaching</role>
+        <qualification>Phd</qualification>
+        <school_name>Christ</school_name>
+        <DOB>1/01/1929</DOB>
+        <contact_number>1234543241</contact_number>
+    </user>
+    <user>
+        <name>Raju</name>
+        <role>Non-Teaching</role>
+        <qualification>MCA</qualification>
+        <school_name>Christ</school_name>
+        <DOB>1/01/1999</DOB>
+        <contact_number>1234543241</contact_number>
+    </user>
+    <user>
+        <name>Pradeep</name>
+        <role>Teaching</role>
+        <qualification>Bcom</qualification>
+        <school_name>Christ</school_name>
+        <DOB>1/01/1999</DOB>
+        <contact_number>1234543241</contact_number>
+    </user>
+    <user>
+        <name>joshua</name>
+        <role>Amin</role>
+        <qualification>MCA</qualification>
+        <school_name>Christ</school_name>
+        <DOB>1/01/1999</DOB>
+        <contact_number>1234543241</contact_number>
+    </user>
+    <user>
+        <name>Sheetal</name>
+        <role>Sports</role>
+        <qualification>MBA</qualification>
+        <school_name>Christ</school_name>
+        <DOB>1/01/1999</DOB>
+        <contact_number>1234543241</contact_number>
+    </user>
+    <user>
+        <name>Geetha</name>
+        <role>Non-Teaching</role>
+        <qualification>MCA</qualification>
+        <school_name>Christ</school_name>
+        <DOB>1/01/1999</DOB>
+        <contact_number>1234543241</contact_number>
+    </user>
+    <user>
+        <name>joshua</name>
+        <role>Admin</role>
+        <qualification>MCA</qualification>
+        <school_name>Christ</school_name>
+        <DOB>1/01/1999</DOB>
+        <contact_number>1234543241</contact_number>
+    </user>
+
+
+</register>
